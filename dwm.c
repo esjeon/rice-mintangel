@@ -2273,7 +2273,7 @@ updatesystray(void)
 			die("fatal: could not malloc() %u bytes\n", sizeof(Systray));
 		wa.event_mask        = ButtonPressMask | ExposureMask;
 		wa.override_redirect = True;
-		wa.background_pixel  = scheme[SchemeNorm][ColBg].pixel;
+		wa.background_pixel  = 0;
 		wa.border_pixel      = 0;
 		wa.colormap          = drw->cmap;
 		systray->win = XCreateWindow(dpy, root, x, m->by, w, bh, 0, drw->depth,
@@ -2299,9 +2299,6 @@ updatesystray(void)
 		}
 	}
 	for (w = 0, i = systray->icons; i; i = i->next) {
-		/* make sure the background color stays the same */
-		wa.background_pixel  = scheme[SchemeNorm][ColBg].pixel;
-		XChangeWindowAttributes(dpy, i->win, CWBackPixel, &wa);
 		XMapRaised(dpy, i->win);
 		w += systrayspacing;
 		i->x = w;
@@ -2318,9 +2315,6 @@ updatesystray(void)
 	XConfigureWindow(dpy, systray->win, CWX|CWY|CWWidth|CWHeight|CWSibling|CWStackMode, &wc);
 	XMapWindow(dpy, systray->win);
 	XMapSubwindows(dpy, systray->win);
-	/* redraw background */
-	XSetForeground(dpy, drw->gc, scheme[SchemeNorm][ColBg].pixel);
-	XFillRectangle(dpy, systray->win, drw->gc, 0, 0, w, bh);
 	XSync(dpy, False);
 }
 
