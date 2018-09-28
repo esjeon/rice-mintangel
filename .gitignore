@@ -1,2 +1,10 @@
 st/config.h
 dwm/config.h
+dmenu/config.h
+
+st/st
+dwm/dwm
+dmenu/dmenu
+dmenu/stest
+
+*.o
