@@ -6,5 +6,6 @@ st/st
 dwm/dwm
 dmenu/dmenu
 dmenu/stest
+status/status
 
 *.o

@@ -2,7 +2,7 @@
 NAME = mintangel
 PREFIX = $(HOME)/.local/
 
-PARTS = dwm st dmenu
+PARTS = dwm st dmenu status
 
 #
 # Big targets
