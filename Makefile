@@ -2,7 +2,7 @@
 NAME = mintangel
 PREFIX = $(HOME)/.local/
 
-PARTS = dwm st
+PARTS = dwm st dmenu
 
 #
 # Big targets
@@ -47,4 +47,8 @@ dwm/config.h: configs/dwm-config.h
 
 st: st/config.h
 st/config.h: configs/st-config.h
+	@ cp -v $< $@
+
+dmenu: dmenu/config.h
+dmenu/config.h: configs/dmenu-config.h
 	@ cp -v $< $@
