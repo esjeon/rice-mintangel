@@ -14,7 +14,6 @@ static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = {
 	"Hack:pixelsize=15"
 };
-static const char dmenufont[]       = "monospace:size=10";
 static const char col_normfg[]      = "#bdc3c7";
 static const char col_normbg[]      = "#212121";
 static const char col_normbr[]      = "#212121";
@@ -68,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_normbg, "-nf", col_normfg, "-sb", col_selbg, "-sf", col_selfg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
