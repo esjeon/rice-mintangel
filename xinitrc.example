@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+cd "${HOME}"
+
+compton &
+feh --bg-fill "${HOME}/.local/share/backgrounds/mintangel-background-2560x1080.jpg"
+mintangel-status &
+ibus-daemon -x -r -d &
+nm-applet &
+exec dwm
