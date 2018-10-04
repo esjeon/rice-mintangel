@@ -2,6 +2,10 @@
 Mint Angel
 ==========
 
+![terminals](/screenshot/terms.jpg)
+![main shot](/screenshot/main.jpg)
+![mandelbrot](/screenshot/mandelbrot.jpg)
+
 Resources
 ----------
 
